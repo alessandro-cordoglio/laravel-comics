@@ -26,9 +26,10 @@
     }
 }
 /* VARIABLES */
+$main-color: #0282f9;
+$dark-color: #1C1C1C;
 :root{
     /* colors */
-    --backgroundcolor-primary: #1C1C1C;
     --backgroundcolor-primary-soft: #303030;
     --backgroundcolor-secondary: #0282F9;
     /* container */
@@ -47,9 +48,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 /* LAYOUT */
-main{
-    background-color: var(--backgroundcolor-primary);
-}
+
 .item_section{
     background-color: var(--backgroundcolor-secondary);
 }
