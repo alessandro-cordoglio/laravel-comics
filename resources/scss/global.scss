@@ -1,0 +1,111 @@
+/* MIXINS */
+@mixin flex {
+    display: flex;
+}
+@mixin flex-column{
+    @include flex;
+    flex-direction: column;
+}
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+@mixin link_reset {
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+@mixin button-reset {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover{
+        filter: brightness(0.5);
+    }
+}
+/* VARIABLES */
+:root{
+    /* colors */
+    --backgroundcolor-primary: #1C1C1C;
+    --backgroundcolor-primary-soft: #303030;
+    --backgroundcolor-secondary: #0282F9;
+    /* container */
+    --c-size:1400px;
+}
+/* RESET */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+/* TYPOGRAPHY */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+/* LAYOUT */
+main{
+    background-color: var(--backgroundcolor-primary);
+}
+.item_section{
+    background-color: var(--backgroundcolor-secondary);
+}
+.small_info--section{
+    background-image: url(src/assets/footer-bg.jpg) ;
+    background-size: cover;
+}
+.sign_up--section{
+    background-color: var(--backgroundcolor-primary-soft);
+}
+.container_{
+    max-width: var(--c-size);
+    margin: auto;
+}
+
+/* nav */
+.nav_layout{
+    ul{
+        @include reset-list;
+        @include link_reset;
+        display: flex;
+        li{ 
+            padding: 13px ;
+            
+        }
+    }
+}
+/* list */
+.list_elements{
+    @include reset-list;
+    @include link_reset;
+    margin-top: 15px;
+    color: rgb(179, 173, 173);
+    font-size: 13px;
+    li{
+        margin-bottom: 5px;
+    }
+    a:hover{
+        color: lightgray;
+    }
+
+}
+/* button */
+.main_button{
+    @include button-reset;
+    border: 2px solid var(--backgroundcolor-secondary);
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+}
+/* flex */
+.flex{
+    @include flex
+}
+.flex_column{
+    @include flex-column
+}
+/* card */
